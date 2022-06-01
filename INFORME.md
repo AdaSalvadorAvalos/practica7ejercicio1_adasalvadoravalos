@@ -1,9 +1,11 @@
-Materiales:
-· Amplificador de Audio Módulo decodificador I2S Dac sin filtrar
-· Altavoz 
-· ESP32
+# Práctica 7:ejercicio 1
 
-Presentación:
+## Materiales:
+- Amplificador de Audio Módulo decodificador I2S Dac sin filtrar
+- Altavoz 
+- ESP32
+
+## Presentación:
 En esta pràctica vamos a observar los buses de I2S. En la red I2S siempre tenemos a alguien que transmite y 
 a alguien que recibe. Ambos puede ser el maestro(no a la vez), y no solo eso sinó que podemos añadir un 
 controlador externo. Todo aquel que genere la señal de reloj (SCK) y la señal de las líneas de selección de palabras(WS),
@@ -19,7 +21,7 @@ GND->GND
 VIN-> 3.3V
 
 
-Explicación del código:
+## Explicación del código:
 ```
 #include <Arduino.h>
 //librerias 
@@ -55,4 +57,4 @@ void loop(){
 
 ```
 
-Ver salida en el vídeo
+Ver salida en el vídeo.
