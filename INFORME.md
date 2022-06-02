@@ -21,7 +21,7 @@ GND->GND
 VIN-> 3.3V
 
 
-## Explicación del código:
+## Explicación del código (con comentarios que explican el funcionamiento línea a línea):
 ```
 #include <Arduino.h>
 //librerias 
