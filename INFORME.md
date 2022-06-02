@@ -29,7 +29,7 @@ VIN-> 3.3V
 #include "AudioOutputI2S.h"
 #include "AudioFileSourcePROGMEM.h"
 #include "sampleaac.h"
-//creamos un objeto puntero del tipo de las librerias añadidas
+//declaramos punteros del tipo de las librerias añadidas
 AudioFileSourcePROGMEM *in;
 AudioGeneratorAAC *aac;
 AudioOutputI2S *out;
@@ -37,21 +37,21 @@ AudioOutputI2S *out;
 void setup(){
   Serial.begin(115200);
 
-  in = new AudioFileSourcePROGMEM(sampleaac, sizeof(sampleaac));
-  aac = new AudioGeneratorAAC();
-  out = new AudioOutputI2S();
-  out -> SetGain(0.125);
-  out -> SetPinout(26,25,22);
-  aac->begin(in, out);
+  in = new AudioFileSourcePROGMEM(sampleaac, sizeof(sampleaac)); //creamos  un puntero a un objeto, en este caso a una instáncia de la clase AudioFileSourcePROGMEM.
+  aac = new AudioGeneratorAAC(); //creamos  un puntero a un objeto, en este caso a una instáncia de la clase AudioGeneratorAAC.
+  out = new AudioOutputI2S(); //creamos  un puntero a un objeto, en este caso a una instáncia de la clase AudioOutputI2S.
+  out -> SetGain(0.125); //inicializamos out a 0.125
+  out -> SetPinout(26,25,22); //inicializamos out en los pines (26,25,22)
+  aac->begin(in, out); //inicializamos acc.
 }
 
 void loop(){
-  if (aac->isRunning()) {
+  if (aac->isRunning()) { //si acc está funcionando se queda en el bucle
     aac->loop();
   } else {
-    aac -> stop();
-    Serial.printf("Sound Generator\n");
-    delay(1000);
+    aac -> stop(); //si no lo paras 
+    Serial.printf("Sound Generator\n"); //enseñas por la terminal Sound Generator\n
+    delay(1000); //añades un delay
   }
 }
 
